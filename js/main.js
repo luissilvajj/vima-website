@@ -69,11 +69,33 @@ document.addEventListener('DOMContentLoaded', () => {
             const phone = inputs[2].value;
             const details = inputs[3].value;
 
-            const message = `Hola! Vengo de vimalaser.com.%0A%0AMi nombre es: ${name}%0ACorreo: ${email}%0ATeléfono: ${phone}%0A%0AConsulta:%0A${details}`;
+            if (!name || !details) {
+                alert('Por favor completa los campos requeridos.');
+                return;
+            }
+
+            const message = `*Nuevo Contacto Web (VIMA)*%0A%0A*Nombre:* ${name}%0A*Correo:* ${email}%0A*Teléfono:* ${phone}%0A%0A*Mensaje:*%0A${details}`;
 
             // Redirect to WhatsApp
-            window.open(`https://wa.me/584126392512?text=${message}`, '_blank');
+            const whatsappUrl = `https://wa.me/584126392512?text=${message}`;
+            window.open(whatsappUrl, '_blank');
         });
+    }
+
+    // Handle Hash Scroll on Load (for cross-page navigation)
+    if (window.location.hash) {
+        const targetSection = document.querySelector(window.location.hash);
+        if (targetSection) {
+            setTimeout(() => {
+                const headerOffset = 80;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }, 500); // Small delay to ensure layout is ready
+        }
     }
 
     // Theme Toggle Logic
