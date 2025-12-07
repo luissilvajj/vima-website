@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página No Encontrada | VIMA</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Oswald:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .error-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: var(--bg-dark);
+            padding: 20px;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .error-message {
+            color: var(--text-gray);
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="error-page">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Página No Encontrada</h1>
+        <p class="error-message">Lo sentimos, la página que buscas no existe o ha sido movida. Regresa al inicio para
+            encontrar lo que necesitas.</p>
+        <a href="index.html" class="btn btn-primary">Volver al Inicio</a>
+    </div>
+
+</body>
+
+</html>

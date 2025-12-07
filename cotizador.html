@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- DXF Parser Library -->
-    <script src="https://cdn.jsdelivr.net/npm/dxf-parser@1.1.2/dist/dxf-parser.min.js"></script>
+    <!-- DXF Parser Library -->
+    <script src="js/vendor/dxf-parser.min.js"></script>
 </head>
 
 <body>
@@ -37,6 +38,12 @@
                 <li><a href="cotizador.html" class="active">Cotizador</a></li>
                 <li><a href="index.html#empresas">Empresas</a></li>
                 <li><a href="index.html#contacto" class="btn-contact">Cotizar</a></li>
+                <li style="display: flex; align-items: center; margin-left: 10px;">
+                    <button id="theme-toggle" class="btn-icon" aria-label="Cambiar Tema"
+                        style="color: var(--text-main); font-size: 1.2rem;">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>

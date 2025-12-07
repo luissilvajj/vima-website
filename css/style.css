@@ -3,13 +3,37 @@
     --primary-color: #E6007E;
     /* Vima Hot Pink */
     --primary-dark: #b30062;
-    --bg-dark: #0a0a0a;
+
+    /* Dark Mode (Default) */
+    --bg-body: #0a0a0a;
     --bg-card: #141414;
-    --text-white: #ffffff;
-    --text-gray: #b3b3b3;
+    --bg-card-alt: #0f0f0f;
+    --bg-nav: rgba(10, 10, 10, 0.95);
+
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --text-dark: #000000;
+
+    --border-color: #222;
+    --input-bg: #0a0a0a;
+
     --font-heading: 'Oswald', sans-serif;
     --font-body: 'Montserrat', sans-serif;
     --transition: all 0.3s ease;
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+    --bg-body: #f5f5f5;
+    --bg-card: #ffffff;
+    --bg-card-alt: #ececec;
+    --bg-nav: rgba(255, 255, 255, 0.95);
+
+    --text-main: #333333;
+    --text-muted: #666666;
+
+    --border-color: #ddd;
+    --input-bg: #ffffff;
 }
 
 * {
@@ -20,14 +44,17 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    /* Fix for fixed navbar overlapping content */
 }
 
 body {
     font-family: var(--font-body);
-    background-color: var(--bg-dark);
-    color: var(--text-white);
+    background-color: var(--bg-body);
+    color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -64,7 +91,7 @@ h4 {
 }
 
 .section-subtitle {
-    color: var(--text-gray);
+    color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 3rem;
 }
@@ -104,7 +131,7 @@ h4 {
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-main);
 }
 
 .btn-primary:hover {
@@ -115,12 +142,12 @@ h4 {
 
 .btn-outline {
     border-color: white;
-    color: white;
+    color: var(--text-main);
     background: transparent;
 }
 
 .btn-outline:hover {
-    background-color: white;
+    background-color: var(--text-main);
     color: black;
     transform: translateY(-3px);
 }
@@ -137,7 +164,7 @@ h4 {
 }
 
 .navbar.scrolled {
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: var(--bg-nav);
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
@@ -153,7 +180,7 @@ h4 {
     font-family: var(--font-heading);
     font-size: 2.8rem;
     font-weight: 700;
-    color: white;
+    color: var(--text-main);
     letter-spacing: 2px;
 }
 
@@ -200,7 +227,7 @@ h4 {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: white;
+    background-color: var(--text-main);
     transition: var(--transition);
 }
 
@@ -245,11 +272,11 @@ h4 {
 
 /* --- Companies Section --- */
 .companies {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-body);
 }
 
 .company-section {
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .company-section:last-child {
@@ -257,7 +284,7 @@ h4 {
 }
 
 .bg-card-alt {
-    background-color: #0f0f0f;
+    background-color: var(--bg-card-alt);
 }
 
 .company-grid {
@@ -325,7 +352,7 @@ h4 {
 
 /* --- Integration Section --- */
 .integration {
-    background-color: #080808;
+    background-color: var(--bg-card-alt);
     position: relative;
 }
 
@@ -349,7 +376,8 @@ h4 {
     font-family: var(--font-heading);
     font-size: 4rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    opacity: 0.1;
     line-height: 1;
     margin-bottom: -20px;
     position: relative;
@@ -372,7 +400,7 @@ h4 {
     align-items: center;
     justify-content: center;
     height: 100px;
-    color: #333;
+    color: var(--text-main);
     font-size: 1.5rem;
 }
 
@@ -405,7 +433,7 @@ h4 {
 /* --- Engineering Solutions --- */
 .engineering {
     background-color: #0f0f0f;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border-color);
 }
 
 .engineering-grid {
@@ -419,7 +447,8 @@ h4 {
     align-items: flex-start;
     gap: 15px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     transition: var(--transition);
 }
@@ -446,7 +475,7 @@ h4 {
 
 /* --- Gallery / Instagram --- */
 .bg-dark {
-    background-color: #050505;
+    background-color: var(--bg-body);
 }
 
 .insta-grid {
@@ -483,7 +512,7 @@ h4 {
     opacity: 0;
     transition: var(--transition);
     font-size: 3rem;
-    color: white;
+    color: var(--text-main);
 }
 
 .insta-item:hover .insta-overlay {
@@ -496,7 +525,7 @@ h4 {
 
 /* --- Clients --- */
 .clients {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-body);
 }
 
 .clients-grid {
@@ -507,22 +536,22 @@ h4 {
 }
 
 .client-logo {
-    background-color: #1a1a1a;
+    background-color: var(--bg-card);
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    color: #444;
+    color: var(--text-muted);
     font-weight: 700;
     font-family: var(--font-heading);
-    border: 1px solid #222;
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .client-logo:hover {
     border-color: var(--primary-color);
-    color: white;
+    color: var(--text-main);
 }
 
 /* --- Contact --- */
@@ -538,7 +567,7 @@ h4 {
 
 .contact-info {
     padding: 50px;
-    background-color: #1a1a1a;
+    background-color: var(--bg-card);
     position: relative;
 }
 
@@ -587,9 +616,9 @@ h4 {
 .form-group textarea {
     width: 100%;
     padding: 15px;
-    background-color: #0a0a0a;
-    border: 1px solid #333;
-    color: white;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
     border-radius: 4px;
     font-family: var(--font-body);
     transition: var(--transition);
@@ -599,14 +628,14 @@ h4 {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    background-color: #111;
+    background-color: var(--bg-card);
 }
 
 /* --- Footer --- */
 footer {
-    background-color: black;
+    background-color: var(--bg-body);
     padding: 50px 0;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -635,7 +664,8 @@ footer {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #222;
+    background-color: var(--bg-card);
+    color: var(--text-main);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -694,7 +724,7 @@ footer {
         top: 70px;
         left: 0;
         width: 100%;
-        background-color: black;
+        background-color: var(--bg-body);
         flex-direction: column;
         align-items: center;
         padding: 20px 0;
@@ -760,7 +790,7 @@ footer {
     border-radius: 8px;
     overflow: hidden;
     transition: var(--transition);
-    border: 1px solid #222;
+    border: 1px solid var(--border-color);
 }
 
 .product-card:hover {
@@ -805,7 +835,7 @@ footer {
 
 /* --- Advanced Calculator --- */
 .bg-light {
-    background-color: #1a1a1a;
+    background-color: var(--bg-card);
 }
 
 .calculator-grid {
@@ -866,7 +896,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
 }
 
@@ -880,7 +910,7 @@ footer {
 
 .canvas-wrapper {
     background-color: #000;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     height: 400px;
     display: flex;
@@ -918,7 +948,7 @@ footer {
 
 .stat-item .value {
     font-weight: 700;
-    color: white;
+    color: var(--text-main);
 }
 
 .config-card {
@@ -946,7 +976,7 @@ footer {
     background-color: var(--bg-card);
     padding: 30px;
     border-radius: 8px;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -959,7 +989,7 @@ footer {
 
 .summary-divider {
     height: 1px;
-    background-color: #333;
+    background-color: var(--border-color);
     margin: 20px 0;
 }
 
@@ -1003,7 +1033,7 @@ footer {
 
 .summary-note {
     font-size: 0.8rem;
-    color: #666;
+    color: var(--text-muted);
     margin: 20px 0;
     font-style: italic;
 }
@@ -1016,7 +1046,7 @@ footer {
 .btn-whatsapp {
     display: block;
     background-color: #25D366;
-    color: white;
+    color: var(--text-main);
     text-align: center;
     padding: 16px 20px;
     border-radius: 8px;
