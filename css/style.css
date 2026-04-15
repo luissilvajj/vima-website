@@ -251,7 +251,7 @@ h4 {
 /* --- Hero Section --- */
 .hero {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1920&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/PHOTO-2025-12-03-09-40-41.jpg');
     /* Industrial background */
     background-size: cover;
     background-position: center;
@@ -772,7 +772,7 @@ footer {
 /* --- Products Page --- */
 .page-header {
     height: 50vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1531297461136-82lw9b151967?q=80&w=1920&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/PHOTO-2025-12-03-09-40-48.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
